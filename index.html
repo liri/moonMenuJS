@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+		<script src="moonmenu.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Lemon' rel='stylesheet' type='text/css'>
+		<script type="text/javascript">    
+		    $(document).ready(function() {
+				// custom menu
+				var moonmenu = $(".mymenu").moonMenu({
+					closeOnLostFocus: false,
+					
+					radius: 80,
+					position: 'bottom left',
+					reverseOrder: false,
+					densityFactor: 2
+				}).open();
+			});
+		</script>
+
+		<style>
+			#marker2 {
+				margin-top: 100px;
+				margin-left: 400px;
+				display: inline-block;
+			}
+			
+			.moonMenuItem {
+				border-radius: 30px;
+				text-align: center;
+				width: 30px;
+				height: 30px;
+				cursor: pointer;
+				font-size: 12px;
+				background: none;
+				background-color: #D9DBD0;
+				border: 5px solid #3D3D3D; 
+			}
+
+			.moonMenuItem:hover {
+				background-color: #3D3D3D;
+				border: 5px solid #E2E2E2; 
+			}
+
+			.moonMenuItem > * {
+				padding-top: 4px;
+			}
+
+			body {
+				margin: 0;
+				font-family: 'Lemon', cursive;
+				background-color: #E2E2E2;
+				text-align: center;
+			}
+
+			header {
+				background-color: #4A99A8;
+				border-bottom: 3px solid #8BA49E;
+				height: 370px;
+				padding: 20px;
+			}
+
+			footer {
+				position: absolute;
+				bottom: 10px;
+				right: 10px;
+				font-size: 14px;
+			}
+
+			a {
+				color: #4A99A8;
+				text-decoration: none;
+			}
+
+			a:hover {
+				color: #8BA49E;
+			}
+
+			h1 {
+				font-size: 42px;
+			}
+
+			h3 {
+				color: #bbb;
+			}
+
+			#pointer {
+				width: 140px;
+				height: 130px;
+				background: url(cursor.png) no-repeat;
+				margin-right: auto;
+				margin-left: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<h1>MoonMenu.js</h1>
+			<h3>An awesome circular menu for your website</h3>
+			<div id="pointer">
+				
+			</div>
+			<ul for='#pointer' class='mymenu'>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</header>
+		<section>
+			<h4>How to use:</h4>
+			<span>
+				<a href="samples/simpleUsage.html">Simple Menu</a> |
+				<a href="samples/customUsage.html">Custom Menu</a> |
+				<a href="samples/contextMenu.html">Context Menu</a> |
+				<a href="samples/cssCustomization.html">CSS Customization</a> |
+				<a href="samples/eventsRegistration.html">Events Registration</a> |
+				<a href="samples/multipleMenus.html">Multiple Menus</a>
+			</span>
+
+			<h4><a href="docs/index.html" target="_blank">Documentation</a></h4>
+		</section>
+		<footer>
+			By <a href="https://github.com/liri">Liron Aichel</a>
+		</footer>
+	</body>
+</html>

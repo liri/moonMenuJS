@@ -1,0 +1,162 @@
+<html>
+	<head>
+		<script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+		<script src="../moonmenu.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="samples.css" />
+		<script type="text/javascript">    	
+			$(document).ready(function() {
+				var moonmenu = $("#mymenu").moonMenu({
+					radius: 65,
+					position: 'middle right',
+					densityFactor: 2,
+					allowMultiple: true,
+					closeOnLostFocus: false
+				});
+				
+				var moonmenu2 = $("#picActionsMenu").moonMenu({
+					position: 'bottom left',
+					allowMultiple: true,
+					closeOnLostFocus: false
+				});
+			});
+		</script>
+
+		<style>
+			body {
+				margin-right: auto; 
+				margin-left: auto;
+				margin: 20px;
+			}
+		
+			#contextMenuSample {
+				background: url(Koala.jpg) no-repeat;
+				background-size: contain;
+				height: 100px;
+				width: 133px;
+				border: 2px solid #3D3D3D;
+			}
+			
+			#menuWrapper {
+				height: 120px;
+				width: 133px;
+				margin-left: 50px;
+			}
+
+			#mymenu .moonMenuItem {
+				font-size: 12px;
+				width: 120px;
+				color: black;
+				border-radius: 5px;
+				box-shadow: 0px 0px 10px gray;
+				text-align: center;
+			}
+			
+			#mymenu .moonMenuItem.title {
+				background-color: #422B5F;
+				color: white;
+			}
+			#mymenu .moonMenuItem.author {
+				background-color: #845D9E;
+				color: white;
+			}
+			#mymenu .moonMenuItem.date {
+				background-color: #C0C012;
+			}
+			#mymenu .moonMenuItem.place {
+				background-color: #91AB0A;
+			}
+			
+			#picActionsMenu .moonMenuItem {
+				color: white;
+				border-radius: 20px;
+				text-align: center;
+				width: 20px;
+				height: 20px;
+				cursor: pointer;
+				font-size: 12px;
+				background-color: white;
+				border: 2px solid #3D3D3D; 
+			}
+			#picActionsMenu .moonMenuItem:hover {
+				border: 2px solid #F7C956; 
+			}
+
+			.moonMenuItem > * {
+				padding: 2px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<h2>Multiple moon-menus:</h2>
+			<p>Open multiple menus easily and enhance your elements!</p>
+			<pre style="background:#fff;color:#3b3b3b"><span style="color:#a535ae">$</span>(<span style="color:#a535ae">document</span>)<span style="color:#45ae34;font-weight:700">.ready</span>(<span style="color:#ff5600">function</span>() {
+                <span style="color:#ff5600">var</span> moonmenu <span style="color:#069;font-weight:700">=</span> <span style="color:#a535ae">$</span>("<span style="color:#963dff">#mymenu</span>").moonMenu({
+                    radius: <span style="color:#a8017e">65</span>,
+                    position: <span style="color:#666">'middle right'</span>,
+                    densityFactor: <span style="color:#a8017e">2</span>,
+                    allowMultiple: <span style="color:#a535ae">true</span>
+                });
+                
+                <span style="color:#ff5600">var</span> moonmenu2 <span style="color:#069;font-weight:700">=</span> <span style="color:#a535ae">$</span>("<span style="color:#963dff">#picActionsMenu</span>").moonMenu({
+                    position: <span style="color:#666">'bottom left'</span>,
+                    allowMultiple: <span style="color:#a535ae">true</span>
+                });
+            });
+			</pre>
+			<div id="menuWrapper">
+				<div id="contextMenuSample">
+					<ul id='mymenu' for="#menuWrapper">
+						<li class="hide">
+						</li>
+						<li class="title">
+						<div>
+							Title: Koala
+						</div>
+						</li>
+						<li class="author">
+						<div>
+							Author: John X
+						</div>
+						</li>
+						<li class="date">
+						<div>
+							Date: 02/03/13
+						</div>
+						</li>
+						<li class="place">
+						<div>
+							Place: Houston, TX
+						</div>
+						</li>
+						<li class="hide">
+						</li>
+					</ul>
+					<ul id='picActionsMenu' for='#contextMenuSample'>
+							<li>
+							<div>
+								<img alt="Crop" width="16" height="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAARCQAAEQkBwOWiGAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJpSURBVFiFvZdNaxNRFIafeydNg2NFa11pC36hIH60TCwM2bT2X9SF4L/oD3Dpym1XrZvu3NuuQiEwUKMgSAUXddmqWCakiXeOi4w4vTOlk0ySd5W8uYfnzeXcM3eUiGCrWq1uiMgqoIATYC0IgtephQNqaWmp0mq13EajcaTsALVabardbv+2aj4HQfBgGPCFhYVrWutt4HapVLql7QVhGDoZdVle3/I8byaGPwS+zs3NHaYCjEqe580AOzH8UxRFK1tbW0aJCLVabSoMQyeKoq7WesJxnJ9W/b4x5mm/UKXUBWBCa30JePsPDiwHQXAIoDzP2xCR53HNO2PMi4wAw9IpOICOu31cWk3CATS9ozYWRVFkny40vXM+LnVtowSsAS8BRyn1/YzCDvAtJ8QBZoFJ+wcRadleahDNz89fzmjCL0EQ3D+PvLi4eNUYswM8orezp0IYY67s7e39SnpDmwMxfDuGfwQO8tQNJUAC/hhoOo6zDJixBMiAP2s0Gkd56wsFKAovFGAY8IEDxPD3ReEDBfB9fzqGPwE+FIH3HcD3/elOp7OdgK8UgfcVwIaXy+VC/7zfAI4N393d/VEUDr1nwbkSkVml1OSw4ZD/WYCInCilDsg54YCbQNny9oEo/myA9dQOxNeodNLeDtzJCT9Ld63vr7J6YKIgpB9NpgJUKpU/YwwgqR4A8DzvGLg4arpSajMzAIDv+9fb7XYJ6GbdZIrKdV1Tr9ePzwxQVNVq9Y2I3Eh63W53tdlshkkv1xwYRCKyAtxLelrrVIOP8tUsNS9c1015owywzv8rvyilNuv1+rG96C8BrBcaBLJn+AAAAABJRU5ErkJggg%3D%3D" />
+							</div>
+							</li>
+							<li><div>
+								<img alt="Crop" width="16" height="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAARCQAAEQkBwOWiGAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANzSURBVFiF7ZdPaBxlGMZ/73R2mv4ZAkUaIRIQuiieAjM0myUU1ksQKtiwsYSCPQmCaAo91YtID17qIYgHvZVSQiWkQqtQBFekhjWZkByVXI3QRSjLpE39MsvrYWbLNOzufEHRSx/4GPjm+d7nmXe+P+8nQRBcA2aAY8BR4AnQ6jZVbYnItud5CysrK7tYoFqtHjHGzKvqqIicBPJtCHgMPAKW3Uz85dz448ALwGsAIgKAMeZX4BsbA8aYaeDT7tgeOJ49Z5zsy4uw5Pv+XRtxgIy7ZEE96pCmvUh8rtFoJLYGGo1G4vv+nIWJYw7pP+8LVf35IOJ5E8BPBbQnDulk6wsRuRYEwfRBDYRhOAV8VkBrFRoADonIrTAMX7UVHx8fHyVNf+nfMAAwDNypVqsniojlcvmw67rLwIhF3JajqnkDS8CHwF4P8iljzFKtVnMHOh0e/gI43eNVB7hEbmKqassRke2uuO/7c1EUfQ68DjzoEWRqd3f3xX7iYRgOAxd6vHooIm9EUbSQXx0isu14nrcAnMsvtSiK7idJEgCr+SiqeqPZbP7ez0AURW1Vvb6v+7dOpzOxtrb2PTyzRM95nrcgqtovHuVy+XCW0guqer1UKn3cbDZ7ZeYpKpXKSJIkV4F3gB+B81EUtfsOUNXCFgTBsA0v3yYmJkZmZ2cPFfEGZuC/gPO/qj838NyAjYFareZWKpWXDho42xULMXAZVqvVE8aYJWBKVW+USqWPbDaivb29T0TkInCz3W6/v7W19VdfA5OTk0eMMdO+79/NFx7Z8XsHONXtU9Uv19fX3xtkIAzDr4B3c12rSZLMbG5uds8carWaG8fxWc/z7jnGmHngdhzHi92TLitAmnlxABG5OCi1lUplhHQLzuO067rrWYHSFV8Ebhtj5h1VHc2I9TiOF4MguCQi35LWAPtxc9C+PjY29ifp/r8fI8APYRh+kInXAVR1VIIguAW83S9oDqvtdvvMoP8JTyffL8ArFjG/dkgvC0V4kCTJTJE4pEdyp9N5E3hoEfekjYE9oJ6fREXY2NjYEpHzpFXQPzZwOYqi+7biXWQFyGUbA0MFpDNFdWAvZGOmCmhDDulFcRDq+SVqK56f7QPwyCG9pRahvrOz85atgTiOz1qIAzx2gWWKr+d/qOp3tgY8z7tnjLlicz3/G1PZw0mrnBX5AAAAAElFTkSuQmCC" />
+							</div></li>
+							<li><div>
+								<img alt="Crop" width="16" height="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAARCQAAEQkBwOWiGAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJvSURBVFiFxZU9aBRhEIaf2dMcKS53pUk64UIIqTbf7YIcpLESCalNTGnSxaiRWKYQjCCCiI0IYmUKa7E6sDO5pAiWWlkEbCwSuIuSHYubwyM/l929TZxmv5lv3neehWVHVJX/GV5aYaVSCdpn51x4oQATExMzqrrWUXrinLt1YQAisgL0d5T6gUcXAlCpVG4A4ydcjdvd+QJEUfQwzV0mAM65UEQmT7sXkcmkH2QiABE58w3j9KQCCMNwRFWnz+pT1ekwDEcyBzg8PHwQs9+z3uwAgiC4AszFNQXmTJMNQBRFi0De0u8xJHnT9A5QrVYLwIKln4CvcYyBBdP2BtBsNu8AJUvXuvUeiZJp0wM45y4DSwAiUq/X67UEAABL5pEOQFVngGE7P004HGDYPJIDSCuWLf22tbX1IQUAIrIsIpIYwPf9m8CYpc9UNUoDAIyZVzKAjl/qz0Kh8Dbl8KNe8QCCILgGVE38olarNXsBAKrmGQ+gY63uHxwcvOpx+FHP7gDOuVFgCkBVX+/s7PzKAgCYMu/uAKq6DAjwJ5fLPc9oOICY9+kAvu8Picisgbzf2Nj4kSEAIjLr+/7QqQC5XO4u0Aeo53lpfjxnRZ/NOA7gnCuq6rylHzc3N+MunUShqvPOueIxAFobbwAgiqIkSydpDPBvu7YAyuVyHmjv7y/b29ufzxEAYNFmtgCKxeJtYBBSL52kMVgqlWYBLlnhnj1/A6POuZUu4jKAqu61C6q612XfnBiqeh940wa4as8+EXkcx8DzvHedZ1W9nojAZrY/wpfAfkzhroisNhqN9Xah0Wisi8gqsBvTY99m8hdPXsV50kTS2wAAAABJRU5ErkJggg%3D%3D" />
+							</div></li>
+							<li><div>
+								<img alt="Crop" width="16" height="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAARCQAAEQkBwOWiGAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIuSURBVFiFzZc/aBNxFMc/7661OMQ4qt2EaBUhcLy7gEYdBRERxEWto7pVpQ06OohaEEHEwS4iDjqKOLiYubnLEhx1cii4OFhIouSeQ41EbM9rkrv6hZt+f77f3/t9373fEzNjKzGRJ1mpVJoqFouzwA1gL/BY8oiAqhaBq8AcsHtgaDVTAZ7n7XFd95qZXQF2rDcnEwGqOmNmCyJyEdiWNHesAoIgOBzHcQ04DUiaNSObUETE87xTIlIDqpteP2wEVHXSzC6IyAJwcKhNhhFQrVYLnU7nMnAdmB6WuI/UVxAEwa44judYS6edoxKnFlCpVPb1er154BIwNS7ifwpQ1YqI1MzsDOCMm7iPvzzg+/7JOI5rInI8K9IBrPyOgKqeB24Bh0RSpfDIEJGnYmaoagW4B2zPg9jMvjmO87zdbr/KpRglITNzpcUE8H9cwaAJ8xABICK3N5uGn4APY+AusVY/VjY0YcKP6B1wP4qi+rDsqnoTuAsJJoyiaDkMw7Ou6x4AloDur6ETwHvf90NVPSciIxk5dRomFKOPwINCofCsXq930uw1GIFxluMvIvKo2+0+abVaXzMTMLDJRg+SVTNbcl33YaPR+JyZgD4SnmQ/zOyl4ziLYRj+kTmpTJgWZmbNZvNNFEVHHcc5ArwGDJgUkVkza6nqW8/zjq17gJyf5ctmtgjMiMidzAT0kdCYfO8L2+rWrJNrOR5oTueB/SLyAjPbkq9cLk+bGT8B8RFcDj8HA5gAAAAASUVORK5CYII%3D" />
+							</div></li>
+							<li><div>
+								<img alt="Crop" width="16" height="16" src="data:image/png;base64,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%3D%3D" />
+							</div></li>
+							<li><div>
+								<img alt="Crop" width="16" height="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAARCQAAEQkBwOWiGAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAASuSURBVFiFrZdviFRVFMB/582go+24YmEIWTC2ELJFO+/utg0hmIG7BGnSF6kEKyI3EorAFDSIzKUvJmIGZlhJWB9yMSFB8F//cN59u1iC5Spt+UH7g66o7Oqs7/TB97Y303vjrtv5Mveed875nXvem3PvFVVlomKMmSoiT6jqPOABVT0jIiczmcyOo0eP/lrPVyaagDHmIeBToCnh8RURecNau0VTQM4E4S8B36XAAW5T1c2u676WFuOWK2CMWQFsASSmHlbVHsdxpqtqR1wvIg96nvdLbZxbqkACXIHuSqVyj+/7Sz3P61TVTiAIn+eA55NijTuBJLiIvGCtXX3s2LE/Izvf9/cBu6K5qroTTiCEvwtcjcM9z/soxeW32PiuCScA9Fhr87lcbqaILFPVpXXgAO2x8Y9JBtmxko0xjUEQzHVdt0NVf7p06dIX/f39V9PsW1tbnwLmR3MR8ZLsbvovaGtrmx0EwQdAJ9Vf/BURWWut3aSqQdzHdd1HReQrYGqo+gNottb+Pa4EXNd9RkS2ANPSbERkn+d5nXXgiMgiz/P2JPmnfgPGmBUi8kkCvCpjVe1oa2ubnQYHNqTBUxNIaTIHgIXDw8M5EZkP9Ib6b8rl8pkUeLe1dk0aHBJeQUqTedlau9UY02itvRjZuq57r+/7p+rAV9eDQ00FbgL/ELjQ2tp62HVdF8BxnIwxZpuIfH0rcIhVINxY3k+Ct7e3TxsZGRmk+pVcAKbX6MYFH02gWCwax3F+4N++MAqPDI0xe4HH68QaAdZZazeMFQ6QbWpqmtzY2PhxPThAPp9ffPny5VWqug6YVBPnRBAEy3p7e20s4VmqaoD7RWQgk8nYcrncX3sukGKx+LSI7Izp3rTWvpWWsTHmDhFpAZqBc6ra5/v+yagZGWPuVtXtIvJYgvvpIAie6+3tPRIpHKr79alCobC+Dnw+8MjQ0NBhz/M2Dg4OflkoFPojuOu6TwLHU+AAcxzHOWSMeWe0AsaY71X14XC+zVr7YpKn67odItIDTAbOA4PAbmvt69HKgeNAPuY2BFwLFxrXo6pLfN/f7QRB8NdoNiK3jwEOMENE9kTwMOD2BEiXtXY60FYbU0S2lkqlGY6I+DGHxWGZASiVSlOMMa/UwBGR9zzPezWaG2Nm1Sl7mtxZqVQWZlX1MxFZxY1G4gD7jTG7gHPAs8DMmsyr4GHiRmS0HQypalc4/jb8Pauqy0P/lUDLqJ+qYoxZCWy6WcqqutH3/f+ccF3XXSMi0cd7MSx7ohhjeoBF4XR/FsD3/c3GmIyqrgemJPidV9Uu3/c/TwoqIgOxqWOMuS8cn7XWXmxubp6Uy+UKoW1DrBUMZMOVKbCxpaVlbzab7VLVuUAB+FlVj4jITt/3z6atKpPJ2OvXr0fTPHAijLsc2BHCI92on6raqiNZX19fP1D1fsci5XK533Xd08CccbhdAw5M+GoWSbFYnOc4ziGqN6c+4Pew7AtqXNZaa9+e0NUsLmF77a5RtwCLauEiciSfz3fDBO+GtWKtXaOqS7hxCE2Sa8DahoaGBQcPHhyB/+F2nCSlUmlGpVJZGO2GwICqWuCA7/un4rb/AOdAOidUB405AAAAAElFTkSuQmCC" />
+							</div></li>
+						</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
