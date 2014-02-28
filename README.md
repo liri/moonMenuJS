@@ -1,6 +1,8 @@
 # MoonMenu.js
 An awesome circular menu for your website.
 
+![alt tag](http://lironaichel.com/lironaichel/jsworks/moonmenu/img.jpg)
+
 Supporting all major browsers:
  * IE9+
  * Firefox
