@@ -1,7 +1,7 @@
 # MoonMenu.js
 An awesome circular menu for your website.
 
-![alt tag](http://lironaichel.com/lironaichel/jsworks/moonmenu/img.jpg)
+![alt tag](http://lironaichel.com/jsworks/moonmenu/img.jpg)
 
 Supporting all major browsers:
  * IE9+
@@ -14,10 +14,10 @@ Supporting all major browsers:
 
 Copyright (c) 2013 - 2014 Liron Aichel <br/>
 
-Project homepage: http://lironaichel.com/lironaichel/jsworks/moonmenu <br/>
+Project homepage: http://lironaichel.com/jsworks/moonmenu <br/>
 Github homepage: https://github.com/liri/moonMenuJS <br/>
 
-Documentation: http://lironaichel.com/lironaichel/jsworks/moonmenu/docs/index.html <br/>
+Documentation: http://lironaichel.com/jsworks/moonmenu/docs/index.html <br/>
 
 Licensed under MIT-style license:
  Permission is hereby granted, free of charge, to any person obtaining a copy
